@@ -10,3 +10,6 @@ spring:
       database: jawnzgateway
     jest:
       uri: ${BONSAI_URL}
+  elasticsearch:
+    rest:
+      uris: ${BONSAI_URL}
