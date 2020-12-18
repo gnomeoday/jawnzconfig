@@ -1,5 +1,5 @@
 # ===================================================================
-# JHipster Production Spring Cloud Config.
+# JHipster Development Spring Cloud Config.
 # ===================================================================
 
 # Property used on app startup to check the config server status
@@ -25,7 +25,7 @@ logging:
     path: /tmp
     file: ${spring.application.name}.log
 
-    
+
 spring:  
   security:
     oauth2:
