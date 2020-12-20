@@ -6,7 +6,7 @@
 spring:  
   data:
     mongodb:
-      uri: mongodb+srv://admin:Password1@cluster0.z3m9l.mongodb.net/jawnzgateway?retryWrites=true&w=majority #mongodb://localhost:27017
+      uri: mongodb+srv://admin:'{cipher}83b93ebb0869398022304af0d2703bb7d9d1692778a56d7a1232f9a564c0cd0c944b9d3c58af39ef71c609eab715ad13'cluster0.z3m9l.mongodb.net/jawnzgateway?retryWrites=true&w=majority #mongodb://localhost:27017
       database: jawnzgateway
     jest:
       uri: ${BONSAI_URL}
