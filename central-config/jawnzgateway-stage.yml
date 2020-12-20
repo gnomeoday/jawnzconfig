@@ -14,5 +14,5 @@ spring:
     rest:
       uris: https://juniper-549921985.eu-west-1.bonsaisearch.net:443
       read-timeout: 10000
-      username: sbhgtpn0vh
-      password: bgye1a8l9k
+      username: '{cipher}sbhgtpn0vh'
+      password: '{cipher}bgye1a8l9k'
