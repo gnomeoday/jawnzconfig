@@ -3,3 +3,8 @@
 # ===================================================================
 
 # Mongo Atlas connection properties
+spring:  
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:Password1@cluster0.z3m9l.mongodb.net/jawnzgateway?retryWrites=true&w=majority #mongodb://localhost:27017
+      database: jawnzgateway
