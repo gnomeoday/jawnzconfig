@@ -24,16 +24,3 @@ jhipster:
 logging:
     path: /tmp
     file: ${spring.application.name}.log
-
-    
-spring:  
-  security:
-    oauth2:
-      client:
-        provider:
-          oidc:
-            issuer-uri: https://dev-662125.okta.com/oauth2/default
-        registration:
-          oidc:
-            client-id: 0oa15pxb3YLFjNFsb4x6
-            client-secret: -NqYoZU7icewsclKBuoZ5PbRhDyhdv7W4IvhP6qd
