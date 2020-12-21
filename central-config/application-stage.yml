@@ -24,4 +24,8 @@ jhipster:
 logging:
     path: /tmp
     file: ${spring.application.name}.log
-    
+    level:
+      ROOT: DEBUG
+      io.github.jhipster: INFO
+      com.jawnz.app: INFO
+   
