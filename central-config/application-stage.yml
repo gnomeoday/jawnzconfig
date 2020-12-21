@@ -26,6 +26,7 @@ logging:
     file: ${spring.application.name}.log
     level:
       ROOT: DEBUG
-      io.github.jhipster: INFO
-      com.jawnz.app: INFO
+      io.github.jhipster: DEBUG
+      com.jawnz.gate: DEBUG
+      com.jawnz.app: DEBUG
    
