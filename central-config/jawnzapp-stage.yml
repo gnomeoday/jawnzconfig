@@ -2,7 +2,27 @@
 # JawnzApp Staging Spring Cloud Config.
 # ===================================================================
 
-# Mongo Atlas connection properties
+eureka:
+  instance:
+    hostname: jawnzapp.herokuapp.com
+    non-secure-port: 80
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
+
+jhipster:
+  cache:
+    memcached:
+      enabled: true
+      servers: ${MEMCACHIER_SERVERS}
+      expiration: 300
+      use-binary-protocol: true
+      authentication:
+        enabled: true
+        username: ${MEMCACHIER_USERNAME}
+        password: ${MEMCACHIER_PASSWORD}
+        
 spring:  
   data:
     mongodb:
@@ -16,3 +36,13 @@ spring:
       read-timeout: 10000
       username: '{cipher}c0764576347771a7113622c0d8de3abf4e5937e17dd368167312406617cf3521'
       password: '{cipher}400d49eacfc022666bc7a160a0b6b6c090ede0ff90ca89f2daa01f7df1bdec5f'
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: ${OKTA_OAUTH2_ISSUER}
+        registration:
+          oidc:
+            client-id: ${OKTA_OAUTH2_CLIENT_ID_WEB}
+            client-secret: ${OKTA_OAUTH2_CLIENT_SECRET_WEB}
