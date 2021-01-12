@@ -46,3 +46,9 @@ spring:
           oidc:
             client-id: ${OKTA_OAUTH2_CLIENT_ID_WEB}
             client-secret: ${OKTA_OAUTH2_CLIENT_SECRET_WEB}
+            
+logging:
+  level:
+    ROOT: INFO
+    org.apache.kafka.clients: OFF
+            
