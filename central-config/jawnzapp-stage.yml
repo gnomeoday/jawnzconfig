@@ -1,0 +1,48 @@
+# ===================================================================
+# JawnzApp Staging Spring Cloud Config.
+# ===================================================================
+
+eureka:
+  instance:
+    hostname: jawnzapp.herokuapp.com
+    non-secure-port: 80
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
+
+jhipster:
+  cache:
+    memcached:
+      enabled: true
+      servers: ${MEMCACHIER_SERVERS}
+      expiration: 300
+      use-binary-protocol: true
+      authentication:
+        enabled: true
+        username: ${MEMCACHIER_USERNAME}
+        password: ${MEMCACHIER_PASSWORD}
+        
+spring:  
+  data:
+    mongodb:
+      uri: '{cipher}d44b3980ce45f7169a9b4f32a44114475a281b975864cb8c49343228259ffed29540ae454a1c4c88f13c389db94f5601bd98af92195269afee302bdcf4e0e47f9b0b8ecb4f6fd95e4ed9743aae1729690c92bad780719b20a78d39b58e7d89640720c1fc45e3debe982ee00016325a6649002870fe37cef426918cb6452d30c4' #mongodb://localhost:27017
+      database: jawnzapp
+    jest:
+      uri: ${BONSAI_URL}
+  elasticsearch:
+    rest:
+      uris: ${BONSAI_PLAIN_URL}
+      read-timeout: 10000
+      username: '{cipher}c0764576347771a7113622c0d8de3abf4e5937e17dd368167312406617cf3521'
+      password: '{cipher}400d49eacfc022666bc7a160a0b6b6c090ede0ff90ca89f2daa01f7df1bdec5f'
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: ${OKTA_OAUTH2_ISSUER}
+        registration:
+          oidc:
+            client-id: ${OKTA_OAUTH2_CLIENT_ID_WEB}
+            client-secret: ${OKTA_OAUTH2_CLIENT_SECRET_WEB}
