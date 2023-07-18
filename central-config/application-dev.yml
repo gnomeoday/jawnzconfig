@@ -1,26 +1,29 @@
-# ===================================================================
-# JHipster Development Spring Cloud Config.
-# ===================================================================
-
-# Property used on app startup to check the config server status
+# Common configuration shared between all applications
 configserver:
-    name: JHipster Registry config server
-    status: Connected to the JHipster Registry config server!
+  name: Docker JHipster Registry
+  status: Connected to the JHipster Registry running in Docker
 
-# Default JWT secret token (to be changed in production!)
 jhipster:
-    security:
-        authentication:
-            jwt:
-                # It is recommended to encode the secret key in Base64, using the `base64-secret` property.
-                # For compabitibily issues with applications generated with older JHipster releases,
-                # we use the non Base64-encoded `secret` property here.
-                secret: my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded
-                # The `base64-secret` property is recommended if you use JHipster v5.3.0+
-                # (you can type `echo 'secret-key'|base64` on your command line)
-                # base64-secret: bXktc2VjcmV0LWtleS13aGljaC1zaG91bGQtYmUtY2hhbmdlZC1pbi1wcm9kdWN0aW9uLWFuZC1iZS1iYXNlNjQtZW5jb2RlZAo=
+  security:
+    authentication:
+      jwt:
+        # secret key which should be base64 encoded and changed in production
+        base64-secret: NmQ3NTY1NjhlZGY2NmEzNzUxMjFkZDVmNTA3YjRiNWIxMzM2ZGRiNDNlYjFkMDc2YzdlYTgzYjVkNTNlZGU0NTdiNDg5OTUyNTZjYmNiYjlkMWNjNjE5MTE2NjVhZjM2MmZkYTdiYjRkNGZiMDU5MzhmMDIzYTE4ZjQ3ZTVmMTU=
 
-# Enable /management/logfile endpoint for all apps
-logging:
-    path: /tmp
-    file: ${spring.application.name}.log
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          oidc:
+            issuer-uri: https://dev-662125.okta.com/oauth2/default
+        registration:
+          oidc:
+            client-id: 0oa15pxb3YLFjNFsb4x6
+            client-secret: -NqYoZU7icewsclKBuoZ5PbRhDyhdv7W4IvhP6qd
