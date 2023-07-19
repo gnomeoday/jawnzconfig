@@ -26,7 +26,7 @@ jhipster:
 spring:  
   data:
     mongodb:
-      uri: '{cipher}b638b841f3cd39669cb3ce8d1287815d88be31b652d6a19c5d220d6d1b25d1d57efa0b9f3c68e5847827e67ec99bc3e41fe8898d6e39ea570434cc72918358d8eaf2aa4085384eaa94b398488d4fd3f4cc4c3a663dd73cd60ea6b017a4fef16c0c3803a30078068c3c0250b8aad357246d894e8aac44206128174a3b0d7415ed' #mongodb://localhost:27017
+      uri: '{cipher}94bae20b506c783915a5d64b7b521102694bd017eca7a2b3cd8b0273e15d67b4a713dac885610d2848887ea78c2f0a5d380a6042dfa85d50abdf4fbbebe702a8eb2430aeaef65540cbb120f297261e5f456b7e3aecc92b9b783f71ff5379688869d12709c880c19da2aa727904171ad6' #mongodb://localhost:27017
       database: jawnzgateway
   elasticsearch:
     uris: ${ELASTIC_URL}
