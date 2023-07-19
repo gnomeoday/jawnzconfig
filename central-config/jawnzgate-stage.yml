@@ -28,7 +28,12 @@ spring:
     mongodb:
       uri: '{cipher}b638b841f3cd39669cb3ce8d1287815d88be31b652d6a19c5d220d6d1b25d1d57efa0b9f3c68e5847827e67ec99bc3e41fe8898d6e39ea570434cc72918358d8eaf2aa4085384eaa94b398488d4fd3f4cc4c3a663dd73cd60ea6b017a4fef16c0c3803a30078068c3c0250b8aad357246d894e8aac44206128174a3b0d7415ed' #mongodb://localhost:27017
       database: jawnzgateway
-            
+  elasticsearch:
+    uris: ${ELASTIC_URL}
+
+server:
+  port: ${PORT:8080}
+              
 logging:
   level:
     ROOT: INFO
