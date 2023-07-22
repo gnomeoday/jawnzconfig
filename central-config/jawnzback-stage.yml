@@ -1,10 +1,10 @@
 # ===================================================================
-# JawnzApp Staging Spring Cloud Config.
+# JawnzBack Staging Spring Cloud Config.
 # ===================================================================
 
 eureka:
   instance:
-    hostname: jawnzapp.herokuapp.com
+    hostname: jawnzback.herokuapp.com
     non-secure-port: 80
     prefer-ip-address: false
   client:
@@ -26,23 +26,15 @@ jhipster:
 spring:  
   data:
     mongodb:
-      uri: '{cipher}d44b3980ce45f7169a9b4f32a44114475a281b975864cb8c49343228259ffed29540ae454a1c4c88f13c389db94f5601bd98af92195269afee302bdcf4e0e47f9b0b8ecb4f6fd95e4ed9743aae1729690c92bad780719b20a78d39b58e7d89640720c1fc45e3debe982ee00016325a6649002870fe37cef426918cb6452d30c4' #mongodb://localhost:27017
-      database: jawnzapp
-    jest:
-      uri: ${BONSAI_URL}
+      uri: '{cipher}94bae20b506c783915a5d64b7b521102694bd017eca7a2b3cd8b0273e15d67b4a713dac885610d2848887ea78c2f0a5d380a6042dfa85d50abdf4fbbebe702a8eb2430aeaef65540cbb120f297261e5f456b7e3aecc92b9b783f71ff5379688869d12709c880c19da2aa727904171ad6' #mongodb://localhost:27017
+      database: jawnzback
   elasticsearch:
-    rest:
-      uris: ${BONSAI_PLAIN_URL}
-      read-timeout: 10000
-      username: '{cipher}c0764576347771a7113622c0d8de3abf4e5937e17dd368167312406617cf3521'
-      password: '{cipher}400d49eacfc022666bc7a160a0b6b6c090ede0ff90ca89f2daa01f7df1bdec5f'
-  security:
-    oauth2:
-      client:
-        provider:
-          oidc:
-            issuer-uri: ${OKTA_OAUTH2_ISSUER}
-        registration:
-          oidc:
-            client-id: ${OKTA_OAUTH2_CLIENT_ID_WEB}
-            client-secret: ${OKTA_OAUTH2_CLIENT_SECRET_WEB}
+    uris: ${ELASTIC_URL}
+
+server:
+  port: ${PORT:8080}
+              
+logging:
+  level:
+    ROOT: INFO
+    org.apache.kafka.clients: OFF

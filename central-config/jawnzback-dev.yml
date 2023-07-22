@@ -2,9 +2,3 @@
 # JawnzApp Development Spring Cloud Config.
 # ===================================================================
 
-# Mongo Atlas connection properties
-spring:  
-  data:
-    mongodb:
-      uri: mongodb+srv://admin:Password1@cluster0.z3m9l.mongodb.net/jawnzapp?retryWrites=true&w=majority #mongodb://localhost:27017
-      database: jawnzapp
