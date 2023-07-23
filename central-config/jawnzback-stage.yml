@@ -30,6 +30,30 @@ spring:
       database: jawnzback
   elasticsearch:
     uris: ${ELASTIC_URL}
+  cloud:
+    stream:
+      kafka:
+        binder:
+          replicationFactor: 3
+          auto-create-topics: true
+          brokers: pkc-4r297.europe-west1.gcp.confluent.cloud:9092
+          configuration:
+            security:
+              protocol: SASL_SSL
+            sasl:
+              mechanism: PLAIN
+              jaas:
+                config: org.apache.kafka.common.security.plain.PlainLoginModule required username="FNS2CFI7N5OUQ4HD" password="hAwCuCn1honn54XentUm6BvxMPLIUfzGcCoT3HOKakQqPnoNfTzMTmy+Uzv7TSP6";
+      bindings:
+        binding-in-sse:
+          destination: sse-topic
+          content-type: text/plain
+          group: jawnzback
+        binding-out-sse:
+          destination: sse-topic
+          content-type: text/plain
+          group: jawnzback
+    
 
 server:
   port: ${PORT:8080}
