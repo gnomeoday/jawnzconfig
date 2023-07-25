@@ -14,7 +14,7 @@ eureka:
 jhipster:
   cache:
     memcached:
-      enabled: true
+      enabled: false
       servers: ${MEMCACHIER_SERVERS}
       expiration: 300
       use-binary-protocol: true
