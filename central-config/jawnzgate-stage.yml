@@ -11,18 +11,6 @@ eureka:
     service-url:
       defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
       
-jhipster:
-  cache:
-    memcached:
-      enabled: false
-      servers: ${MEMCACHIER_SERVERS}
-      expiration: 300
-      use-binary-protocol: true
-      authentication:
-        enabled: true
-        username: ${MEMCACHIER_USERNAME}
-        password: ${MEMCACHIER_PASSWORD}      
-      
 spring:  
   data:
     mongodb:
