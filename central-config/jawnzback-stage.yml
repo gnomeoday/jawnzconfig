@@ -12,16 +12,11 @@ eureka:
       defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
 
 jhipster:
-  cache:
-    memcached:
+    cache: # Cache configuration
+    memcached: # Memcached configuration
+      # Disabled by default in dev mode as Memcached does not work with Spring Boot Devtools
+      # If you want to use Memcached, you must also enable it in CacheConfiguration
       enabled: false
-      servers: ${MEMCACHIER_SERVERS}
-      expiration: 300
-      use-binary-protocol: true
-      authentication:
-        enabled: true
-        username: ${MEMCACHIER_USERNAME}
-        password: ${MEMCACHIER_PASSWORD}
         
 spring:  
   data:
