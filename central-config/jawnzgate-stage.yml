@@ -11,11 +11,18 @@ eureka:
     service-url:
       defaultZone: ${JHIPSTER_REGISTRY_URL}/eureka/
       
-spring:  
+spring:
   data:
-    mongodb:
-      uri: '{cipher}94bae20b506c783915a5d64b7b521102694bd017eca7a2b3cd8b0273e15d67b4a713dac885610d2848887ea78c2f0a5d380a6042dfa85d50abdf4fbbebe702a8eb2430aeaef65540cbb120f297261e5f456b7e3aecc92b9b783f71ff5379688869d12709c880c19da2aa727904171ad6' #mongodb://localhost:27017
-      database: jawnzgateway
+  liquibase:
+    # Remove 'faker' if you do not want the sample data to be loaded automatically
+    contexts: prod
+    url: jdbc:${JDBC_DATABASE_URL}
+    user: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+  r2dbc:
+    url: r2dbc:${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}  
   elasticsearch:
     uris: ${ELASTIC_URL}
 
